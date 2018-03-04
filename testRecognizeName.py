@@ -2,4 +2,4 @@
 # string output
 import recognizeName
 
-print(recognizeName.recognizeName("resume"))
+print(recognizeName.recognizeName("short list of test names"))
