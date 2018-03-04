@@ -19,16 +19,3 @@ def overlay(pdf, outfile, box, x, y, height, width):
     outputStream = (open(outfile, "wb"))
     output_file.write(outputStream)
     outputStream.close()
-
-'''
-
-original = "sample_resumes/sample2.pdf"
-red = "bigredbox.pdf"
-
-# MAX COORDINATES   x_cord, y_cord = 575, 780
-x_cord, y_cord = 245, 710
-w, h = 126, 21
-
-overlay(original, red, x_cord, y_cord, h, w)
-
-'''
