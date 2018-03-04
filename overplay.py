@@ -17,6 +17,7 @@ def overlay(pdf, box, x, y, height, width):
 
 <<<<<<< HEAD
 =======
+    #newfile.mergeRotatedScaledTranslatedPage(newpic, 0, scale, x, y, expand=False)
 >>>>>>> 12c8537c33ead8785021c977eb64f703451b3ab6
     newfile.mergeTranslatedPage(newpic, x, y, expand=False)
     newfile.mergeTranslatedPage(brander, 10, 670, expand=False)
@@ -38,3 +39,5 @@ w, h = 126, 21
 
 overlay(original, red, x_cord, y_cord, h, w)
 
+=======
+>>>>>>> 12c8537c33ead8785021c977eb64f703451b3ab6
