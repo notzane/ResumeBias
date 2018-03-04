@@ -8,7 +8,7 @@ filenametxt = "resume.txt"
 
 extract_text.extract(filenamepdf, filenametxt, "text")
 
-name = recognizeName.getName(filenametxt)
+name = recognizeName.recognizeName(filenametxt)
 print(name)
 
 pos_size = find_name.find_name(filenamepdf, name)
