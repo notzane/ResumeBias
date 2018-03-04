@@ -31,6 +31,12 @@ def noApostrophes(aList):
         newList.append(re.sub("\'", "", i))
     return newList
 
+def both(aList):
+    newList = []
+    for i in aList:
+        newList.append((re.sub("\'", "", i)).title())
+    return newList
+
 
 def recognize(aList):
     names = []
@@ -47,12 +53,12 @@ def recognize(aList):
 
 allTitle = makeTitle(nameList)
 noApostrophesList = noApostrophes(nameList)
-both = makeTitle(noApostrophesList)
+bothMethods = both(nameList)
 
 recognize(nameList)
 recognize(allTitle)
 recognize(noApostrophesList)
-recognize(both)
+recognize(bothMethods)
 
 
 
