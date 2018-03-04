@@ -46,7 +46,7 @@ def recognize(aList):
 
 # returns first name found
 # file must be in utf-8 if it has diacritics
-def getName(fileName):
+def recognizeName(fileName):
     lineList = []
     nameList = []
     recognizeList = []

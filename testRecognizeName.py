@@ -1,5 +1,5 @@
 # test for recognizeName
-
+# string output
 import recognizeName
 
-print(recognizeName.getName("resume"))
+print(recognizeName.recognizeName("resume"))
