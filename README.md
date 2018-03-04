@@ -23,7 +23,7 @@ Upload your resume in PDF format on the demo website. Choose how much informatio
 # Dependencies
 Python 3.6+
 
-nlkt (Stanford NLP module optional)
+nltk (Stanford NLP module optional)
 
 numpy
 
