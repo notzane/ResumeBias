@@ -7,16 +7,16 @@ def overlay(pdf, box, x, y, height, width):
     output_file = PdfFileWriter()
     input_file = PdfFileReader(pdf, "rb")
     logo = PdfFileReader(box, "rb")
-
-    # add page 1 from input1 to output document, unchanged
-    scale = 1
+    brand = PdfFileReader("LogoMakr.pdf", "rb")
 
     newfile = input_file.getPage(0)
     newpic = logo.getPage(0)
+    brander = brand.getPage(0)
+    brander.scaleTo(210, 110)
     newpic.scaleTo(width, height)
 
-    #newfile.mergeRotatedScaledTranslatedPage(newpics, 0, scale, x, y, expand=False)
     newfile.mergeTranslatedPage(newpic, x, y, expand=False)
+    newfile.mergeTranslatedPage(brander, 10, 670, expand=False)
 
     output_file.addPage(newfile)
 
@@ -25,7 +25,7 @@ def overlay(pdf, box, x, y, height, width):
     outputStream.close()
 
 
-original = "test.pdf"
+original = "resume.pdf"
 red = "bigredbox.pdf"
 
 # MAX COORDINATES   x_cord, y_cord = 575, 780
