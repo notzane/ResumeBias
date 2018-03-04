@@ -15,6 +15,9 @@ def overlay(pdf, box, x, y, height, width):
     brander.scaleTo(210, 110)
     newpic.scaleTo(width, height)
 
+<<<<<<< HEAD
+=======
+>>>>>>> 12c8537c33ead8785021c977eb64f703451b3ab6
     newfile.mergeTranslatedPage(newpic, x, y, expand=False)
     newfile.mergeTranslatedPage(brander, 10, 670, expand=False)
 
@@ -25,6 +28,7 @@ def overlay(pdf, box, x, y, height, width):
     outputStream.close()
 
 
+<<<<<<< HEAD
 original = "resume.pdf"
 red = "bigredbox.pdf"
 
