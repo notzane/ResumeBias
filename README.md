@@ -20,6 +20,14 @@ Blind uses natural laguage processing to identify the name and email to generate
 # Usage
 Upload your resume in PDF format on the demo website. Choose how much information you want to remove by clicking the buttons below the submission box. The new PDF will automatically download onto your computer.
 
+# Dependencies
+Python 3.6+
+nlkt (Stanford NLP module optional)
+numpy
+pdfminer.six
+PyPDF2
+unidecode
+
 # Sources Used:
 
 ## NLTK
