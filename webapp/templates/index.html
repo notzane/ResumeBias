@@ -2,9 +2,10 @@
 <title>Upload new File</title>
 <h1>Upload new File</h1>
 <form method=post enctype=multipart/form-data>
-  <p><input type=file name=file>
-    <input type=submit value=Upload>
-  </form>
+  <input type=file name=file>
+  <input type=submit name="filter" value="Filter Name">
+  <input type=submit name="filter" value="Filter Name and Email">
+</form>
 
   {% with messages = get_flashed_messages() %}
   {% if messages %}

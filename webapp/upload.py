@@ -9,6 +9,7 @@ import unbias
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSION = 'pdf'
 
+
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = "super secret key"
@@ -31,11 +32,15 @@ def upload_file():
 
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
+            outfile = "resume_unbiased.pdf"
             path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            outpath =os.path.join(app.config['UPLOAD_FOLDER'], outfile)
             file.save(path)
-
-            unbias.unbias(path)
-            return send_from_directory(directory="uploads", filename="resume_unbiased.pdf", as_attachment=True)
+            if(request.form['filter'] == "Filter Name"):
+                unbias.unbias(path, outpath, False)
+            else:
+                unbias.unbias(path, outpath, True)
+            return send_from_directory(directory="uploads", filename=outfile, as_attachment=True)
 
     return render_template('index.html')
 

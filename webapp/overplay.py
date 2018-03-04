@@ -3,7 +3,7 @@
 from PyPDF2 import PdfFileWriter, PdfFileReader
 
 
-def overlay(pdf, box, x, y, height, width):
+def overlay(pdf, outfile, box, x, y, height, width):
     output_file = PdfFileWriter()
     input_file = PdfFileReader(pdf, "rb")
     logo = PdfFileReader(box, "rb")
@@ -16,7 +16,7 @@ def overlay(pdf, box, x, y, height, width):
 
     output_file.addPage(newfile)
 
-    outputStream = (open("resume_unbiased.pdf", "wb"))
+    outputStream = (open(outfile, "wb"))
     output_file.write(outputStream)
     outputStream.close()
 
