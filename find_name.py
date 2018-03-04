@@ -12,8 +12,8 @@ from pdfminer.pdfdevice import PDFDevice
 def find_corners(layout, name):
     """Function to parse the layout tree."""
     for component in layout:
-        if isinstance(component, LTTextBox) or isinstance(lt_obj, LTTextLine):
-            if(name in component.get_text()):
+        if isinstance(component, LTTextBox) or isinstance(component, LTTextLine):
+            if(name.lower() in component.get_text().lower()):
                 return(component.bbox) # (x0,y0,x1,y1)
         elif isinstance(component, LTFigure): #needs to dig a level deeper to get to a textboxline
             parse_layout(component)
@@ -35,8 +35,8 @@ def find_position(filename, name):
             return(find_corners(layout, name))
 
 def find_name(filename, name):
-    """Accepts filename and a name and returns (x,y,w,h)"""
+    """Accepts filename and a name and returns (x,y,h,w)"""
     corners = find_position(filename, name)
-    return (corners[0], corners[1], corners[2] - corners[0], corners[3] - corners[1])
+    return (corners[0], corners[1], corners[3] - corners[1], corners[2] - corners[0])
 
 #print(find_pos_size("resume.pdf", "Zane"))

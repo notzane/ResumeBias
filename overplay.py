@@ -15,7 +15,7 @@ def overlay(pdf, box, x, y, height, width):
     newpic = logo.getPage(0)
     newpic.scaleTo(width, height)
 
-    #newfile.mergeRotatedScaledTranslatedPage(newpics, 0, scale, x, y, expand=False)
+    #newfile.mergeRotatedScaledTranslatedPage(newpic, 0, scale, x, y, expand=False)
     newfile.mergeTranslatedPage(newpic, x, y, expand=False)
 
     output_file.addPage(newfile)
@@ -25,12 +25,11 @@ def overlay(pdf, box, x, y, height, width):
     outputStream.close()
 
 
-original = "test.pdf"
-red = "bigredbox.pdf"
-
-# MAX COORDINATES   x_cord, y_cord = 575, 780
-x_cord, y_cord = 245, 710
-w, h = 126, 21
-
-overlay(original, red, x_cord, y_cord, h, w)
-
+# original = "test.pdf"
+# red = "bigredbox.pdf"
+#
+# # MAX COORDINATES   x_cord, y_cord = 575, 780
+# x_cord, y_cord = 245, 710
+# w, h = 126, 21
+#
+# overlay(original, red, x_cord, y_cord, h, w)
